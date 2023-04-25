@@ -39,6 +39,7 @@
 //         el.textContent = `[ ${el.textContent} ]`;
 //     }
 // });
+
 let tmp = 0;
 
 
@@ -52,12 +53,34 @@ function mudaCor() {
         el.style.backgroundColor = `rgb(${r},${g},${b})`;
     } )
 
-   tmp = setTimeout(mudaCor, 5000);
-
+   tmp = setTimeout(mudaCor, 1000);
 }
 
-function pararTimeOut() {
-    clearTimeout(tmp);
+
+let banner1 = document.querySelector('.l-e')
+let banner2 = document.querySelector('.l-d')
+let numBanner = 1
+let tmpBanner = 0
+let img1 = ''
+function mudarBanner(){
+    
+    if (numBanner == 1){
+        img1 = 'img/banner-lateral-1.png'
+        numBanner = 2
+    }
+    else if(numBanner == 2){
+        img1 = 'img/banner-lateral-2.png'
+        numBanner = 3
+    }
+    else if(numBanner == 3){
+        img1 = 'img/banner-lateral-3.png'
+        numBanner = 1
+    }
+    banner1.innerHTML = `<img src="${img1}">`
+    banner2.innerHTML = `<img src="${img1}">`
+
+    tmpBanner = setTimeout(mudarBanner, 1000);
+    
 }
 
-mudaCor()
+mudarBanner()

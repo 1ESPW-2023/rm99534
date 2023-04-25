@@ -27,3 +27,11 @@
     flex-grow: 1;
     background-color: crimson;
 }
+.l-e > img{
+    height: 100%;
+    width: 100%;
+}
+.l-d > img{
+    height: 100%;
+    width: 100%;
+}
